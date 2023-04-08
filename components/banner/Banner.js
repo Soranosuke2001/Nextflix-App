@@ -22,7 +22,7 @@ const Banner = (props) => {
           <div className={styles.playBtnWrapper}>
             <button className={styles.btnWithIcon} onClick={playHandler}>
               <Image
-                src="/static/play_arrow.svg"
+                src="/static/icon/play_arrow.svg"
                 alt="play icon"
                 width="32"
                 height="32"
