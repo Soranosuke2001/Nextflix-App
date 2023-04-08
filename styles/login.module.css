@@ -89,7 +89,8 @@
   padding-left: 0.5rem /* 8px */;
   padding-right: 0.5rem /* 8px */;
 
-  color: var(--black30);
+  color: var(--black50);
+  background-color: var(--white10);
 
   width: 100%;
   padding-bottom: 1rem /* 16px */;

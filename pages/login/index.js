@@ -1,3 +1,4 @@
+import { useRef, useState } from "react";
 import Head from "next/head";
 
 import NavBar from "@/components/navbar/NavBar";
@@ -6,9 +7,19 @@ import styles from "@/styles/login.module.css";
 import React from "react";
 
 const Login = () => {
+    const [invalidEmail, setInvalidEmail] = useState(false);
+    const emailInput = useRef(null);
+
   const emailSubmitHandler = (event) => {
     event.preventDefault();
-    console.log("Signing In");
+
+    const userEmail = emailInput.current.value;
+
+    if (!userEmail.trim().includes('@')) {
+        setInvalidEmail(true);
+        return;
+    } 
+    setInvalidEmail(false);
   };
 
   return (
@@ -27,8 +38,9 @@ const Login = () => {
               className={styles.emailInput}
               type="text"
               placeholder="Email"
+              ref={emailInput}
             />
-            <p className={styles.userMsg}>Please Enter a Valid Email</p>
+            {invalidEmail && (<p className={styles.userMsg}>Please Enter a Valid Email</p>)}
             <button className={styles.loginBtn} onClick={emailSubmitHandler}>
               Sign In
             </button>
