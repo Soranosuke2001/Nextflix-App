@@ -7,9 +7,8 @@ import { getVideos } from "@/lib/videos";
 
 import styles from "@/styles/Home.module.css";
 
-export const getServerSideProps = async () => {
-  const videoList = getVideos();
-
+export const getServerSideProps = async (context) => {
+  const videoList = await getVideos();
   return { props: { videoList }};
 };
 
