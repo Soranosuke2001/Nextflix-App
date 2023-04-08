@@ -1,7 +1,23 @@
+import { useRouter } from "next/router";
+
 import styles from "./NavBar.module.css";
 
 const NavBar = (props) => {
   const { username } = props;
+
+  const router = useRouter();
+
+  const homeHandler = (event) => {
+    event.preventDefault();
+    router.push('/');
+
+  }
+
+  const myListHandler = (event) => {
+    event.preventDefault();
+    router.push('/browse/my-list');
+  }
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -9,8 +25,8 @@ const NavBar = (props) => {
           <div className={styles.logoWrapper}>Netflix</div>
         </a>
         <ul className={styles.navItems}>
-          <li className={styles.navItem}>Home</li>
-          <li className={styles.navItem2}>My List</li>
+          <li className={styles.navItem} onClick={homeHandler}>Home</li>
+          <li className={styles.navItem2} onClick={myListHandler}>My List</li>
         </ul>
 
         <nav className={styles.navContainer}>
