@@ -20,7 +20,10 @@ export default function Home() {
 
       <NavBar username="Sora" />
       <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
-      <SectionCards title="Anime" />
+
+      <div className={styles.sectionWrapper}>
+        <SectionCards title="Anime" />
+      </div>
     </>
   );
 }

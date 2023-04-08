@@ -1,7 +1,3 @@
-.heading1 {
-  font-family: 'Roboto Slab', serif;
-}
-
-.heading2 {
-  font-family: 'Comfortaa', cursive;
+.sectionWrapper {
+  margin-top: 1.5rem;
 }
