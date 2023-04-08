@@ -1,9 +1,9 @@
-import Head from 'next/head'
-import Image from 'next/image'
-import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
+import Head from 'next/head';
+import Image from 'next/image';
 
-const inter = Inter({ subsets: ['latin'] })
+import styles from '@/styles/Home.module.css';
+import Banner from '@/components/banner/Banner';
+
 
 export default function Home() {
   return (
@@ -16,6 +16,11 @@ export default function Home() {
       </Head>
       <h1 className={styles.heading1}>Nextflix</h1>
       <h2 className={styles.heading2}>This is the starter file</h2>
+
+      {/* <NavBar /> */}
+      <Banner title='Anime' subTitle='Fun Anime' imageURL='/static/ayaka.jpg' />
+
+      {/* <Card /> */}
     </>
   )
 }
