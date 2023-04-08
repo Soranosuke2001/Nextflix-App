@@ -21,7 +21,7 @@ export default function Home() {
       <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
       <Card imageURL="/static/ayaka.jpg" size="large" />
       <Card imageURL="/static/ayaka.jpg" size="medium" />
-      <Card size="small" />
+      <Card imageURL="/static/ayaka.jpg" size="small" />
     </>
   );
 }

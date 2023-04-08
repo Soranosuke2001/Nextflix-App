@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import { motion } from "framer-motion";
 
 import { sizeMap } from "@/lib/cardHelper";
 
@@ -21,7 +22,7 @@ const Card = (props) => {
   return (
     <div className={styles.container}>
       <h1>Card</h1>
-      <div className={styleName}>
+      <motion.div whileHover={{ scale: 1.2 }} className={styleName}>
         <Image
           className={styles.cardImg}
           src={imageURLSrc}
@@ -29,7 +30,7 @@ const Card = (props) => {
           alt="Video thumbnail"
           onError={imageErrorHandler}
         />
-      </div>
+      </motion.div>
     </div>
   );
 };
