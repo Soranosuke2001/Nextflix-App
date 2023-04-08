@@ -1,12 +1,11 @@
-import Head from 'next/head';
-import Image from 'next/image';
+import Head from "next/head";
+import Image from "next/image";
 
-import Banner from '@/components/banner/Banner';
-import NavBar from '@/components/navbar/NavBar';
-import Card from '@/components/card/Card';
+import Banner from "@/components/banner/Banner";
+import NavBar from "@/components/navbar/NavBar";
+import Card from "@/components/card/Card";
 
-import styles from '@/styles/Home.module.css';
-
+import styles from "@/styles/Home.module.css";
 
 export default function Home() {
   return (
@@ -19,11 +18,10 @@ export default function Home() {
       </Head>
 
       <NavBar username="Sora" />
-      <Banner title='Anime' subTitle='Fun Anime' imageURL='/static/ayaka.jpg' />
-      <Card imageURL='/static/ayaka.jpg' size='large'/>
-      <Card imageURL='/static/ayaka.jpg' size='medium'/>
-      <Card imageURL='/static/ayaka.jpg' size='small'/>
-
+      <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
+      <Card imageURL="/static/ayaka.jpg" size="large" />
+      <Card imageURL="/static/ayaka.jpg" size="medium" />
+      <Card imageURL="/static/ayaka.jpg" size="small" />
     </>
-  )
+  );
 }
