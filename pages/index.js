@@ -1,8 +1,10 @@
 import Head from 'next/head';
 import Image from 'next/image';
 
-import styles from '@/styles/Home.module.css';
 import Banner from '@/components/banner/Banner';
+import NavBar from '@/components/navbar/NavBar';
+
+import styles from '@/styles/Home.module.css';
 
 
 export default function Home() {
@@ -14,10 +16,8 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <h1 className={styles.heading1}>Nextflix</h1>
-      <h2 className={styles.heading2}>This is the starter file</h2>
 
-      {/* <NavBar /> */}
+      <NavBar username="Sora" />
       <Banner title='Anime' subTitle='Fun Anime' imageURL='/static/ayaka.jpg' />
 
       {/* <Card /> */}
