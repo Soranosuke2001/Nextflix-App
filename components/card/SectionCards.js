@@ -2,10 +2,12 @@ import Card from "./Card";
 
 import styles from "./SectionCards.module.css";
 
-const SectionCards = () => {
+const SectionCards = (props) => {
+  const { title } = props;
+
   return (
     <section className={styles.container}>
-      <h2 className={styles.title}>Title</h2>
+      <h2 className={styles.title}>{title}</h2>
       <div className={styles.cardWrapper}>
         <Card imageURL="/static/ayaka.jpg" size="large" />
       </div>
