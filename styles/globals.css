@@ -102,6 +102,6 @@ button {
   }
   body {
     color: white;
-    background: black;
+    background: var(--shadow10);
   }
 }

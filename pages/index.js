@@ -8,11 +8,17 @@ import { getVideos } from "@/lib/videos";
 import styles from "@/styles/Home.module.css";
 
 export const getServerSideProps = async (context) => {
-  const videoList = await getVideos();
-  return { props: { videoList }};
+  const category = 'anime%20trailers';
+
+  const animeList = await getVideos("anime%20trailers");
+  const genshinList = await getVideos("genshin%20impact");
+  // const popularList = await getVideos("");
+  const productivityList = await getVideos("productivity");
+
+  return { props: { animeList, genshinList, productivityList }};
 };
 
-export default function Home({ videoList }) {
+export default function Home({ animeList, genshinList, productivityList }) {
   return (
     <>
       <Head>
@@ -23,16 +29,19 @@ export default function Home({ videoList }) {
       </Head>
 
       <NavBar username="Sora" />
-      <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
+      <Banner title="Kamisato Ayaka" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
 
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime" videos={videoList} size="large" />
+        <SectionCards title="Anime Trailers" videos={animeList} size="large" />
       </div>
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime2" videos={videoList} size="medium" />
+        <SectionCards title="Genshin Impact" videos={genshinList} size="medium" />
       </div>
+      {/* <div className={styles.sectionWrapper}>
+        <SectionCards title="Popular/Trending" videos={popularList} size="small" />
+      </div> */}
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime3" videos={videoList} size="small" />
+        <SectionCards title="Productivity" videos={productivityList} size="small" />
       </div>
     </>
   );
