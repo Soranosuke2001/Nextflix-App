@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 import styles from "./NavBar.module.css";
 
@@ -37,7 +38,7 @@ const NavBar = (props) => {
             {/* Expand more icons */}
             <div className={styles.navDropdown}>
               <div>
-                <a className={styles.linkName}>Sign Out</a>
+                <Link className={styles.linkName} href='/login'>Sign Out</Link>
                 <div className={styles.lineWrapper}></div>
               </div>
             </div>
