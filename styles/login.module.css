@@ -39,6 +39,7 @@
   font-weight: 500;
   align-items: center;
   color: var(--white10);
+  margin-left: 3rem;
   margin-bottom: 1rem /* 16px */;
 }
 

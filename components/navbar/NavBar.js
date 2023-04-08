@@ -4,7 +4,7 @@ import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
-import { userInfo } from "@/lib/magic-client";
+import { logoutUser, userInfo } from "@/lib/magic-client";
 
 import styles from "./NavBar.module.css";
 
@@ -13,16 +13,16 @@ const NavBar = (props) => {
 
   const router = useRouter();
   const [dropdown, setDropdown] = useState(false);
-  const [username, setUsername] = useState('');
+  const [username, setUsername] = useState("");
 
   useEffect(() => {
     const fetchUserInfo = async () => {
-      const { email, publicAddress } = await  userInfo();
+      const { email, publicAddress } = await userInfo();
       setUsername(email);
     };
 
     fetchUserInfo();
-  }, [])
+  }, []);
 
   const homeHandler = (event) => {
     event.preventDefault();
@@ -41,6 +41,13 @@ const NavBar = (props) => {
     });
   };
 
+  const logoutHandler = async (event) => {
+    event.preventDefault();
+
+    await logoutUser();
+    router.push('/login');
+  };
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -54,44 +61,40 @@ const NavBar = (props) => {
             />
           </div>
         </a>
-        {auth === "false" ? (
-          <React.Fragment>
-            <ul className={styles.navItems}>
-              <li className={styles.navItem} onClick={homeHandler}>
-                Home
-              </li>
-              <li className={styles.navItem2} onClick={myListHandler}>
-                My List
-              </li>
-            </ul>
+        <ul className={styles.navItems}>
+          <li className={styles.navItem} onClick={homeHandler}>
+            Home
+          </li>
+          <li className={styles.navItem2} onClick={myListHandler}>
+            My List
+          </li>
+        </ul>
 
-            <nav className={styles.navContainer}>
-              <div>
-                <button className={styles.usernameBtn}>
-                  <p className={styles.username} onClick={dropdownHandler}>
-                    <Image
-                      src="/static/icon/profile.svg"
-                      alt="user profile image"
-                      width="50"
-                      height="50"
-                    />
-                  </p>
-                </button>
-                {dropdown && (
-                  <div className={styles.navDropdown}>
-                    <div>
-                      <p className={styles.linkName}>{username}</p>
-                      <Link className={styles.linkName} href="/login">
-                        Sign Out
-                      </Link>
-                      <div className={styles.lineWrapper}></div>
-                    </div>
-                  </div>
-                )}
+        <nav className={styles.navContainer}>
+          <div>
+            <button className={styles.usernameBtn}>
+              <p className={styles.username} onClick={dropdownHandler}>
+                <Image
+                  src="/static/icon/profile.svg"
+                  alt="user profile image"
+                  width="50"
+                  height="50"
+                />
+              </p>
+            </button>
+            {dropdown && (
+              <div className={styles.navDropdown}>
+                <div>
+                  <p className={styles.linkName}>{username}</p>
+                  <Link className={styles.linkName} href="/login">
+                    <button onClick={logoutHandler}>Sign Out</button>
+                  </Link>
+                  <div className={styles.lineWrapper}></div>
+                </div>
               </div>
-            </nav>
-          </React.Fragment>
-        ) : null}
+            )}
+          </div>
+        </nav>
       </div>
     </div>
   );
