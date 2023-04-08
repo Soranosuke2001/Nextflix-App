@@ -8,8 +8,6 @@ import { setURL } from "@/lib/videos";
 import styles from "@/styles/Home.module.css";
 
 export const getServerSideProps = async (context) => {
-  const category = "anime%20trailers";
-
   const animeList = await setURL("anime%20trailers");
   const genshinList = await setURL("genshin%20impact");
   const popularList = await setURL("popular");
@@ -33,10 +31,10 @@ export default function Home({
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <NavBar username="Sora" />
+      <NavBar username="Sora" auth="false" />
       <Banner
         title="Kamisato Ayaka"
-        subTitle="Fun Anime"
+        subTitle="Hoyoverse"
         imageURL="/static/ayaka.jpg"
       />
 
