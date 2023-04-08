@@ -9,6 +9,24 @@ import SectionCards from "@/components/card/SectionCards";
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
+  const animeVideos = [
+    {
+      imageURL: '/static/ayaka2.jpg'
+    },
+    {
+      imageURL: '/static/ayaka2.jpg'
+    },
+    {
+      imageURL: '/static/ayaka2.jpg'
+    },
+    {
+      imageURL: '/static/ayaka2.jpg'
+    },
+    {
+      imageURL: '/static/ayaka2.jpg'
+    }
+  ];
+
   return (
     <>
       <Head>
@@ -22,7 +40,13 @@ export default function Home() {
       <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
 
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime" />
+        <SectionCards title="Anime" videos={animeVideos} size="large" />
+      </div>
+      <div className={styles.sectionWrapper}>
+        <SectionCards title="Anime2" videos={animeVideos} size="medium" />
+      </div>
+      <div className={styles.sectionWrapper}>
+        <SectionCards title="Anime3" videos={animeVideos} size="small" />
       </div>
     </>
   );
