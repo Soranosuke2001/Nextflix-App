@@ -3,16 +3,17 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import cls from "classnames";
 
-import { sizeMap } from "@/lib/cardHelper";
+import { sizeMap, selectScale } from "@/lib/cardHelper";
 
 import styles from "./Card.module.css";
 
 const Card = (props) => {
-  const { imageURL, size = "medium" } = props;
+  const { imageURL, size = "medium", cardID="1" } = props;
 
   const [imageURLSrc, setImageURLSrc] = useState(imageURL);
 
   const styleName = sizeMap(size);
+  const scale = selectScale(cardID);
 
   const imageErrorHandler = () => {
     setImageURLSrc(
@@ -23,7 +24,7 @@ const Card = (props) => {
   return (
     <div className={styles.container}>
       <motion.div
-        whileHover={{ scale: 1.2 }}
+        whileHover={{ ...scale }}
         className={cls(styles.imgMotionWrapper, styleName)}
       >
         <Image
