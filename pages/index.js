@@ -1,31 +1,14 @@
 import Head from "next/head";
-import Image from "next/image";
 
 import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
-import Card from "@/components/card/Card";
 import SectionCards from "@/components/card/SectionCards";
+import { getVideos } from "@/lib/videos";
 
 import styles from "@/styles/Home.module.css";
 
 export default function Home() {
-  const animeVideos = [
-    {
-      imageURL: '/static/ayaka2.jpg'
-    },
-    {
-      imageURL: '/static/ayaka2.jpg'
-    },
-    {
-      imageURL: '/static/ayaka2.jpg'
-    },
-    {
-      imageURL: '/static/ayaka2.jpg'
-    },
-    {
-      imageURL: '/static/ayaka2.jpg'
-    }
-  ];
+  const videoList = getVideos();
 
   return (
     <>
@@ -40,13 +23,13 @@ export default function Home() {
       <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
 
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime" videos={animeVideos} size="large" />
+        <SectionCards title="Anime" videos={videoList} size="large" />
       </div>
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime2" videos={animeVideos} size="medium" />
+        <SectionCards title="Anime2" videos={videoList} size="medium" />
       </div>
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Anime3" videos={animeVideos} size="small" />
+        <SectionCards title="Anime3" videos={videoList} size="small" />
       </div>
     </>
   );
