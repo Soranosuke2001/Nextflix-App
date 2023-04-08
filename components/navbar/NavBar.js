@@ -1,27 +1,31 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
-import { logoutUser, userInfo } from "@/lib/magic-client";
+import { mClient } from "@/lib/magic-client";
 
 import styles from "./NavBar.module.css";
 
-const NavBar = (props) => {
-  const { auth } = props;
-
+const NavBar = () => {
   const router = useRouter();
   const [dropdown, setDropdown] = useState(false);
   const [username, setUsername] = useState("");
 
   useEffect(() => {
     const fetchUserInfo = async () => {
-      const { email, publicAddress } = await userInfo();
-      setUsername(email);
+      const { email } = await mClient.user.getMetadata();
+
+      if (email) {
+        setUsername(email);
+      }
     };
 
-    fetchUserInfo();
+    try {
+      fetchUserInfo();
+    } catch (error) {
+      console.log("Error fetching user info: ", error);
+    }
   }, []);
 
   const homeHandler = (event) => {
@@ -44,14 +48,20 @@ const NavBar = (props) => {
   const logoutHandler = async (event) => {
     event.preventDefault();
 
-    await logoutUser();
-    router.push('/login');
+    try {
+      await mClient.user.logout();
+      console.log(await mClient.user.isLoggedIn());
+      router.push("/");
+    } catch (error) {
+      console.log("Error logging the user out: ", error);
+      router.push("/login");
+    }
   };
 
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
-        <a className={styles.logoLink} href="/">
+        <a className={styles.logoLink}>
           <div className={styles.logoWrapper}>
             <Image
               src="/static/icon/netflix.svg"
@@ -72,8 +82,8 @@ const NavBar = (props) => {
 
         <nav className={styles.navContainer}>
           <div>
-            <button className={styles.usernameBtn}>
-              <p className={styles.username} onClick={dropdownHandler}>
+            <button className={styles.usernameBtn} onClick={dropdownHandler}>
+              <p className={styles.username}>
                 <Image
                   src="/static/icon/profile.svg"
                   alt="user profile image"
