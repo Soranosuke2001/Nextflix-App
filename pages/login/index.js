@@ -1,17 +1,17 @@
-import React, { useEffect } from "react";
-import { useRef, useState } from "react";
+import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
 import Image from "next/image";
+import Link from "next/link";
 
-import { magicLogin } from "@/lib/magic-client";
+import { mClient } from "@/lib/magic-client";
 
 import styles from "@/styles/login.module.css";
 
 const Login = () => {
-  const [invalidEmail, setInvalidEmail] = useState(false);
   const [loginLoading, setLoginLoading] = useState(false);
-  const emailInput = useRef(null);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [userEmail, setUserEmail] = useState("");
   const router = useRouter();
 
   useEffect(() => {
@@ -28,23 +28,40 @@ const Login = () => {
     };
   }, [router]);
 
-  const emailSubmitHandler = (event) => {
+  const userInputChangeHandler = (event) => {
+    setErrorMessage("");
+    const userInput = event.current.value; 
+
+    setUserEmail(userInput.trim());
+  };
+
+  const signinSubmissionHandler = async (event) => {
     event.preventDefault();
     setLoginLoading(true);
 
-    const userEmail = emailInput.current.value;
+    if (userEmail) {
+      if (userEmail.includes('@')) {
+        try {
+          const didToken = await mClient.auth.loginWithMagicLink({ email });
 
-    if (!userEmail.trim().includes("@")) {
-      setInvalidEmail(true);
-      return;
-    }
-    setInvalidEmail(false);
-    setLoginLoading(false);
-
-    const didToken = magicLogin(userEmail);
-    if (didToken) {
-      router.push("/");
-    }
+          if (didToken) {
+            setLoginLoading(false);
+            router.push('/');
+          }
+        } catch (error) {
+          console.log('Error logging the user in: ', error);
+          setLoginLoading(false);
+        };
+      } else {
+        setLoginLoading(false);
+        setErrorMessage('Please enter a valid email address');
+        console.log('Enter a valid email address');
+      };
+    } else {
+      setLoginLoading(false);
+      setErrorMessage('Please enter a valid email address');
+      console.log('Valid Email was not provided');
+    };
   };
 
   return (
@@ -54,8 +71,8 @@ const Login = () => {
           <title>Nextflix Login</title>
         </Head>
         <header className={styles.header}>
-          <div className={styles.wrapper}>
-            <a className={styles.logoLink} href="/login">
+          <div className={styles.headerWrapper}>
+            <a className={styles.logoLink}>
               <div className={styles.logoWrapper}>
                 <Image
                   src="/static/icon/netflix.svg"
@@ -74,12 +91,12 @@ const Login = () => {
               className={styles.emailInput}
               type="text"
               placeholder="Email"
-              ref={emailInput}
+              onChange={userInputChangeHandler}
             />
-            {invalidEmail && (
-              <p className={styles.userMsg}>Please Enter a Valid Email</p>
+            {errorMessage && (
+              <p className={styles.userMsg}>{errorMessage}</p>
             )}
-            <button className={styles.loginBtn} onClick={emailSubmitHandler}>
+            <button className={styles.loginBtn} onClick={signinSubmissionHandler}>
               {loginLoading ? "Loading..." : "Sign In"}
             </button>
           </div>
