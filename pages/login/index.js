@@ -1,11 +1,12 @@
+import React from "react";
 import { useRef, useState } from "react";
+import { useRouter } from "next/router";
 import Head from "next/head";
 
 import NavBar from "@/components/navbar/NavBar";
+import { magicLogin } from "@/lib/magic-client";
 
 import styles from "@/styles/login.module.css";
-import React from "react";
-import { useRouter } from "next/router";
 
 const Login = () => {
     const [invalidEmail, setInvalidEmail] = useState(false);
@@ -22,7 +23,9 @@ const Login = () => {
         return;
     } 
     setInvalidEmail(false);
-    router.push('/');
+
+    magicLogin(userEmail);
+    // router.push('/');
   };
 
   return (

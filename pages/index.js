@@ -4,6 +4,7 @@ import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
 import { setURL, dummyFetch } from "@/lib/videos";
+import { mClient } from "@/lib/magic-client";
 
 import styles from "@/styles/Home.module.css";
 
