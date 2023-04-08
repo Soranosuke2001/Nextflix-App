@@ -30,9 +30,10 @@ const Login = () => {
 
   const userInputChangeHandler = (event) => {
     setErrorMessage("");
-    const userInput = event.current.value; 
+    const userInput = event.target.value; 
 
-    setUserEmail(userInput.trim());
+    console.log(userInput)
+    setUserEmail(userInput);
   };
 
   const signinSubmissionHandler = async (event) => {
@@ -42,7 +43,7 @@ const Login = () => {
     if (userEmail) {
       if (userEmail.includes('@')) {
         try {
-          const didToken = await mClient.auth.loginWithMagicLink({ email });
+          const didToken = await mClient.auth.loginWithMagicLink({ email: userEmail });
 
           if (didToken) {
             setLoginLoading(false);

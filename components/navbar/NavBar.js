@@ -51,7 +51,7 @@ const NavBar = () => {
     try {
       await mClient.user.logout();
       console.log(await mClient.user.isLoggedIn());
-      router.push("/");
+      router.push("/login");
     } catch (error) {
       console.log("Error logging the user out: ", error);
       router.push("/login");
@@ -95,10 +95,9 @@ const NavBar = () => {
             {dropdown && (
               <div className={styles.navDropdown}>
                 <div>
-                  <p className={styles.linkName}>{username}</p>
-                  <Link className={styles.linkName} href="/login">
-                    <button onClick={logoutHandler}>Sign Out</button>
-                  </Link>
+                  <a className={styles.linkName} onClick={logoutHandler}>
+                    Sign Out
+                  </a>
                   <div className={styles.lineWrapper}></div>
                 </div>
               </div>
