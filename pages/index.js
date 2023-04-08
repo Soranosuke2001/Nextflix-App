@@ -21,8 +21,6 @@ export default function Home() {
       <NavBar username="Sora" />
       <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
       <SectionCards title="Anime" />
-      <Card imageURL="/static/ayaka.jpg" size="medium" />
-      <Card imageURL="/static/ayaka.jpg" size="small" />
     </>
   );
 }
