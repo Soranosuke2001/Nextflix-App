@@ -7,9 +7,13 @@ import { getVideos } from "@/lib/videos";
 
 import styles from "@/styles/Home.module.css";
 
-export default function Home() {
+export const getServerSideProps = async () => {
   const videoList = getVideos();
 
+  return { props: { videoList }};
+};
+
+export default function Home({ videoList }) {
   return (
     <>
       <Head>
