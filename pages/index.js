@@ -3,22 +3,27 @@ import Head from "next/head";
 import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
-import { getVideos } from "@/lib/videos";
+import { setURL } from "@/lib/videos";
 
 import styles from "@/styles/Home.module.css";
 
 export const getServerSideProps = async (context) => {
-  const category = 'anime%20trailers';
+  const category = "anime%20trailers";
 
-  const animeList = await getVideos("anime%20trailers");
-  const genshinList = await getVideos("genshin%20impact");
-  // const popularList = await getVideos("");
-  const productivityList = await getVideos("productivity");
+  const animeList = await setURL("anime%20trailers");
+  const genshinList = await setURL("genshin%20impact");
+  const popularList = await setURL("popular");
+  const productivityList = await setURL("productivity");
 
-  return { props: { animeList, genshinList, productivityList }};
+  return { props: { animeList, genshinList, productivityList, popularList } };
 };
 
-export default function Home({ animeList, genshinList, productivityList }) {
+export default function Home({
+  animeList,
+  genshinList,
+  productivityList,
+  popularList,
+}) {
   return (
     <>
       <Head>
@@ -29,19 +34,35 @@ export default function Home({ animeList, genshinList, productivityList }) {
       </Head>
 
       <NavBar username="Sora" />
-      <Banner title="Kamisato Ayaka" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
+      <Banner
+        title="Kamisato Ayaka"
+        subTitle="Fun Anime"
+        imageURL="/static/ayaka.jpg"
+      />
 
       <div className={styles.sectionWrapper}>
         <SectionCards title="Anime Trailers" videos={animeList} size="large" />
       </div>
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Genshin Impact" videos={genshinList} size="medium" />
+        <SectionCards
+          title="Genshin Impact"
+          videos={genshinList}
+          size="medium"
+        />
       </div>
-      {/* <div className={styles.sectionWrapper}>
-        <SectionCards title="Popular/Trending" videos={popularList} size="small" />
-      </div> */}
       <div className={styles.sectionWrapper}>
-        <SectionCards title="Productivity" videos={productivityList} size="small" />
+        <SectionCards
+          title="Popular/Trending"
+          videos={popularList}
+          size="small"
+        />
+      </div>
+      <div className={styles.sectionWrapper}>
+        <SectionCards
+          title="Productivity"
+          videos={productivityList}
+          size="small"
+        />
       </div>
     </>
   );
