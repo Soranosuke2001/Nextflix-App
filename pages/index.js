@@ -6,6 +6,7 @@ import NavBar from "@/components/navbar/NavBar";
 import Card from "@/components/card/Card";
 
 import styles from "@/styles/Home.module.css";
+import SectionCards from "@/components/card/SectionCards";
 
 export default function Home() {
   return (
@@ -19,7 +20,7 @@ export default function Home() {
 
       <NavBar username="Sora" />
       <Banner title="Anime" subTitle="Fun Anime" imageURL="/static/ayaka.jpg" />
-      <Card imageURL="/static/ayaka.jpg" size="large" />
+      <SectionCards />
       <Card imageURL="/static/ayaka.jpg" size="medium" />
       <Card imageURL="/static/ayaka.jpg" size="small" />
     </>
