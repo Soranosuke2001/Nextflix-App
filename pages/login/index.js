@@ -5,10 +5,12 @@ import NavBar from "@/components/navbar/NavBar";
 
 import styles from "@/styles/login.module.css";
 import React from "react";
+import { useRouter } from "next/router";
 
 const Login = () => {
     const [invalidEmail, setInvalidEmail] = useState(false);
     const emailInput = useRef(null);
+    const router = useRouter();
 
   const emailSubmitHandler = (event) => {
     event.preventDefault();
@@ -20,6 +22,7 @@ const Login = () => {
         return;
     } 
     setInvalidEmail(false);
+    router.push('/');
   };
 
   return (

@@ -3,15 +3,20 @@ import Head from "next/head";
 import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
-import { setURL } from "@/lib/videos";
+import { setURL, dummyFetch } from "@/lib/videos";
 
 import styles from "@/styles/Home.module.css";
 
 export const getServerSideProps = async (context) => {
-  const animeList = await setURL("anime%20trailers");
-  const genshinList = await setURL("genshin%20impact");
-  const popularList = await setURL("popular");
-  const productivityList = await setURL("productivity");
+  // const animeList = await setURL("anime%20trailers");
+  // const genshinList = await setURL("genshin%20impact");
+  // const popularList = await setURL("popular");
+  // const productivityList = await setURL("productivity");
+
+  const animeList = dummyFetch();
+  const genshinList = dummyFetch();
+  const productivityList = dummyFetch();
+  const popularList = dummyFetch('popular');
 
   return { props: { animeList, genshinList, productivityList, popularList } };
 };

@@ -1,5 +1,47 @@
 {
+  "kind": "youtube#searchListResponse",
+  "etag": "EKLNmdUR3tSo70lScnconLVIiYY",
+  "nextPageToken": "CBkQAA",
+  "regionCode": "CA",
+  "pageInfo": {
+    "totalResults": 1000000,
+    "resultsPerPage": 25
+  },
   "items": [
+    {
+      "kind": "youtube#searchResult",
+      "etag": "4kae0zjGKqDNDadGyvwNdVss7p4",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "9DhuWapDDrw"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-31T16:00:11Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc | OFFICIAL TRAILER",
+        "description": "Watch Demon Slayer: Kimetsu no Yaiba on Crunchyroll! https://got.cr/cc-dsknypv Tanjiro's journey leads him to the Swordsmith ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/9DhuWapDDrw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/9DhuWapDDrw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/9DhuWapDDrw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-31T16:00:11Z"
+      }
+    },
     {
       "kind": "youtube#searchResult",
       "etag": "p3wRoE0os4aYE7oDt6q_GXrIFSc",
@@ -70,40 +112,6 @@
     },
     {
       "kind": "youtube#searchResult",
-      "etag": "4kae0zjGKqDNDadGyvwNdVss7p4",
-      "id": {
-        "kind": "youtube#video",
-        "videoId": "9DhuWapDDrw"
-      },
-      "snippet": {
-        "publishedAt": "2023-03-31T16:00:11Z",
-        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
-        "title": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc | OFFICIAL TRAILER",
-        "description": "Watch Demon Slayer: Kimetsu no Yaiba on Crunchyroll! https://got.cr/cc-dsknypv Tanjiro's journey leads him to the Swordsmith ...",
-        "thumbnails": {
-          "default": {
-            "url": "https://i.ytimg.com/vi/9DhuWapDDrw/default.jpg",
-            "width": 120,
-            "height": 90
-          },
-          "medium": {
-            "url": "https://i.ytimg.com/vi/9DhuWapDDrw/mqdefault.jpg",
-            "width": 320,
-            "height": 180
-          },
-          "high": {
-            "url": "https://i.ytimg.com/vi/9DhuWapDDrw/hqdefault.jpg",
-            "width": 480,
-            "height": 360
-          }
-        },
-        "channelTitle": "Crunchyroll Collection",
-        "liveBroadcastContent": "none",
-        "publishTime": "2023-03-31T16:00:11Z"
-      }
-    },
-    {
-      "kind": "youtube#searchResult",
       "etag": "tyXNTceNMp2Tp-a7bN6KjqXonbY",
       "id": {
         "kind": "youtube#video",
@@ -138,6 +146,40 @@
     },
     {
       "kind": "youtube#searchResult",
+      "etag": "cKnMSNQTx1jf4GAKCrRYxc6038M",
+      "id": {
+        "kind": "youtube#playlist",
+        "playlistId": "PLRe9ARNnYSY4YeuwGobMcz_LsbTZ-EUTR"
+      },
+      "snippet": {
+        "publishedAt": "2022-08-06T17:34:29Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Official Anime Trailers | Winter 2023",
+        "description": "",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/AzZYXqUdp5o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/AzZYXqUdp5o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/AzZYXqUdp5o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-08-06T17:34:29Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
       "etag": "elYIIAIJIzOvwl_ySNK-qEMzO3k",
       "id": {
         "kind": "youtube#video",
@@ -168,6 +210,652 @@
         "channelTitle": "AnimeUS",
         "liveBroadcastContent": "none",
         "publishTime": "2023-03-25T05:25:04Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "LkoFL6Wn036b0tGRHytaiKQ78Ic",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "8BIaDDN-r3o"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-03T02:00:02Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Hell&#39;s Paradise | OFFICIAL TRAILER 3",
+        "description": "Watch Hell's Paradise on Crunchyroll! https://got.cr/cc-hppv Gabimaru reigns as the strongest and most ruthless assassin in his ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/8BIaDDN-r3o/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/8BIaDDN-r3o/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/8BIaDDN-r3o/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-03T02:00:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "b_9ek50Bx1S-8ZrvuWDyM3h1c2Y",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "u0cu-T7C9bU"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-25T00:51:15Z",
+        "channelId": "UCBSs9x2KzSLhyyA9IKyt4YA",
+        "title": "Black Clover: Sword of the Wizard King | Official Trailer #2 | Netflix",
+        "description": "The Netflix Film \"Black Clover: Sword of the Wizard King\" starts streaming from June 16, 2023, only on Netflix!",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/u0cu-T7C9bU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/u0cu-T7C9bU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/u0cu-T7C9bU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Netflix Anime",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-25T00:51:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "o_gaoS4qBAp-u7on1K9Fm4Sgx4E",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "4i5ovEbZsOo"
+      },
+      "snippet": {
+        "publishedAt": "2023-04-06T20:15:02Z",
+        "channelId": "UCYzEMRKqrh01-tauv7MYyVQ",
+        "title": "Devilish Angels Trailer Episode 4 @MSA.official",
+        "description": "Become a member today and gain access to over 40 exclusive videos! Click here to sign up: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/4i5ovEbZsOo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/4i5ovEbZsOo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/4i5ovEbZsOo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "MSA previously My Story Animated",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-04-06T20:15:02Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "HPFQr-6hOF-1-KUshdFPV00utOs",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "OsO6R85cFaI"
+      },
+      "snippet": {
+        "publishedAt": "2023-04-04T09:14:51Z",
+        "channelId": "UCzNWVDZQ55bjq8uILZ7_wyQ",
+        "title": "SPIDER-MAN: ACROSS THE SPIDER-VERSE Trailer 2 (NEW, 2023) Animated Movie",
+        "description": "SPIDER-MAN: ACROSS THE SPIDER-VERSE Trailer 2 (NEW, 2023) Animated Movie The NEW movies are here ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/OsO6R85cFaI/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/OsO6R85cFaI/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/OsO6R85cFaI/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": " Boxoffice ANIMATION ☆ Movie Scenes ",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-04-04T09:14:51Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "MNekfmJsQxSnbDTGtlMzx-VspbA",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "IfKNOUUtyCA"
+      },
+      "snippet": {
+        "publishedAt": "2022-12-06T14:44:47Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Suzume | OFFICIAL TRAILER",
+        "description": "Suzume is coming to theaters April 14, 2023. Don't miss the new film by Makoto Shinkai, visionary director of Your Name. and ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/IfKNOUUtyCA/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/IfKNOUUtyCA/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/IfKNOUUtyCA/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-12-06T14:44:47Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "J0EbsXs0qqu28hOSRCQS6r8uhis",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "5pTcio2hTSw"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-14T18:55:54Z",
+        "channelId": "UCi8e0iOVk1fEOogdfu4YgfA",
+        "title": "Suzume Trailer #1 (2023)",
+        "description": "Check out the official trailer for Suzume starring Nanoka Hara! ▻ Buy Tickets for Suzume: ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/5pTcio2hTSw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/5pTcio2hTSw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/5pTcio2hTSw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Rotten Tomatoes Trailers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-14T18:55:54Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "GgH5c29EsdE2-PCJnvQHe5sG7gk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "mWkYrr3W3sY"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-30T14:00:00Z",
+        "channelId": "UCWOA1ZGywLbqmigxE4Qlvuw",
+        "title": "Scott Pilgrim The Anime | Cast Announcement | Netflix",
+        "description": "The original cast of Scott Pilgrim Vs The World returns to voice an all new Scott Pilgrim anime series coming soon to Netflix.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/mWkYrr3W3sY/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/mWkYrr3W3sY/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/mWkYrr3W3sY/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Netflix",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-30T14:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "ukXgg7A4KfZgBbYQvUVVR28EeI8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "Mk8gEBzunD8"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-31T17:00:11Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "My Love Story with Yamada-kun at Lv999 | OFFICIAL TRAILER",
+        "description": "Watch My Love Story with Yamada-kun at Lv999 on Crunchyroll! https://got.cr/cc-mlswyk Akane Kinoshita, a female college ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/Mk8gEBzunD8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/Mk8gEBzunD8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/Mk8gEBzunD8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-31T17:00:11Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "TMfhuFobOi5mH5BHSDQ5zvdmwQM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "PUeB0qbisq0"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-31T16:00:15Z",
+        "channelId": "UCDb0peSmF5rLX7BvuTcJfCw",
+        "title": "Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc  |  OFFICIAL TRAILER",
+        "description": "WIELD YOUR BLADE AGAINST THE DEMONS DRAWING NEAR Demon Slayer: Kimetsu no Yaiba Swordsmith Village Arc starts ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/PUeB0qbisq0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/PUeB0qbisq0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/PUeB0qbisq0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Aniplex USA",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-31T16:00:15Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "rmPan9XN5jYMbcrfbx4AqzDjy3I",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_ce5_P1Hj5A"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-22T16:00:20Z",
+        "channelId": "UCDb0peSmF5rLX7BvuTcJfCw",
+        "title": "MASHLE: MAGIC AND MUSCLES Main Trailer",
+        "description": "The curtain rises on this off-kilter magical fantasy where the power of being jacked crushes any spell! MASHLE: MAGIC AND ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_ce5_P1Hj5A/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_ce5_P1Hj5A/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_ce5_P1Hj5A/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Aniplex USA",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-22T16:00:20Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "gydoJ8IFj6ASsdCMGM_SnXvztzk",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "KnEMDDMYYfU"
+      },
+      "snippet": {
+        "publishedAt": "2019-05-30T00:41:10Z",
+        "channelId": "UCKy1dAqELo0zrOtPkf0eTMw",
+        "title": "Dr. Stone Official Anime Trailer (English Sub)",
+        "description": "A mysterious event turns humanity to stone. Thousands of years later, two childhood friends emerge from their stone shells.",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/KnEMDDMYYfU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/KnEMDDMYYfU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/KnEMDDMYYfU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "IGN",
+        "liveBroadcastContent": "none",
+        "publishTime": "2019-05-30T00:41:10Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "cKE7r_BWVaz3UlrMN1KRUejrvi8",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "04WuoQMhhxw"
+      },
+      "snippet": {
+        "publishedAt": "2023-04-07T15:00:00Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Hell&#39;s Paradise - Opening | Work",
+        "description": "Artist: Ringo Sheena and Millennium Parade Song: Work Watch Hell's Paradise on Crunchyroll! https://got.cr/cc-hpop Gabimaru ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/04WuoQMhhxw/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/04WuoQMhhxw/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/04WuoQMhhxw/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-04-07T15:00:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "wtbY7roswfPdU5Rzzp0_G0fIgjQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "M3W-T02g-Z0"
+      },
+      "snippet": {
+        "publishedAt": "2022-12-01T22:15:01Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "My Clueless First Friend | OFFICIAL TRAILER",
+        "description": "Watch My Clueless First Friend on Crunchyroll! https://got.cr/cc-mcffpv Fifth grader Nishimura isn't too proud of her “Grim Reaper” ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/M3W-T02g-Z0/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/M3W-T02g-Z0/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/M3W-T02g-Z0/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-12-01T22:15:01Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6sb1I_dInBpucr6y7BcSFd8SSsQ",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "ujv2fLp3lU8"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-21T14:00:29Z",
+        "channelId": "UCVc-JLY3Db6-O48y7TS4N7Q",
+        "title": "Solo Leveling | TRAILER OFICIAL",
+        "description": "Solém irmãos! Solo Leveling estreia na próxima Temporada de Inverno aqui na Crunchyroll! ⚔ Equipe técnica: Trabalho ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/ujv2fLp3lU8/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/ujv2fLp3lU8/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/ujv2fLp3lU8/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Brasil",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-21T14:00:29Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QpUeRZnUlG5k7xVC1GCI5fCdouM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "6jY2f6OkpBo"
+      },
+      "snippet": {
+        "publishedAt": "2022-09-16T13:22:37Z",
+        "channelId": "UCUnRn1f78foyP26XGkRfWsA",
+        "title": "Genshin Impact Anime Concept Trailer | Hoyoverse x ufotable",
+        "description": "Let's step into this vast magical world of adventure together! The long-term collaboration project between Genshin Impact and ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/6jY2f6OkpBo/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/6jY2f6OkpBo/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/6jY2f6OkpBo/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "GameSpot Trailers",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-09-16T13:22:37Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "Te7lcdNxYpTMhvykQOz5pcrQbNM",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "aaHZdwPZX6g"
+      },
+      "snippet": {
+        "publishedAt": "2022-11-19T20:30:00Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Hell&#39;s Paradise | OFFICIAL TRAILER",
+        "description": "Watch Hell's Paradise on Crunchyroll! https://got.cr/cc-hppv Gabimaru reigns as the strongest and most ruthless assassin in his ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/aaHZdwPZX6g/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/aaHZdwPZX6g/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/aaHZdwPZX6g/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-11-19T20:30:00Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "QpcWeTHYNog_4RIKhVCFGurWg18",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "jX9DTa75WpU"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-18T21:17:24Z",
+        "channelId": "UCQx1EHx4fmjQXtpirSmuHgg",
+        "title": "SCREAM 6 - Anime Promotional Trailer - David Liu",
+        "description": "Anime promotional vid created for the new #Scream6 film upon its release. Produced by Lineage Studios and Paramount ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/jX9DTa75WpU/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/jX9DTa75WpU/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/jX9DTa75WpU/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "David Liu",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-18T21:17:24Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "6sXfnaSP_f_jiCqjOvt1X-Fb4mI",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "_BDDj_4nmNg"
+      },
+      "snippet": {
+        "publishedAt": "2022-11-19T20:30:03Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Dead Mount Death Play | OFFICIAL TRAILER",
+        "description": "Watch Dead Mount Death Play on Crunchyroll April 2023! View our Spring 2023 lineup here: https://got.cr/spring-23-yt ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/_BDDj_4nmNg/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/_BDDj_4nmNg/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/_BDDj_4nmNg/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2022-11-19T20:30:03Z"
+      }
+    },
+    {
+      "kind": "youtube#searchResult",
+      "etag": "0YwHv1XyWPb1eg_L3Zl3PvW1AZ0",
+      "id": {
+        "kind": "youtube#video",
+        "videoId": "yv8eVL4xBI4"
+      },
+      "snippet": {
+        "publishedAt": "2023-03-22T14:30:59Z",
+        "channelId": "UC6pGDc4bFGD1_36IKv3FnYg",
+        "title": "Metallic Rouge | OFFICIAL TRAILER",
+        "description": "Watch Metallic Rouge on Crunchyroll January 2024! Crunchyroll Collection brings you the latest clips, openings, full episodes, ...",
+        "thumbnails": {
+          "default": {
+            "url": "https://i.ytimg.com/vi/yv8eVL4xBI4/default.jpg",
+            "width": 120,
+            "height": 90
+          },
+          "medium": {
+            "url": "https://i.ytimg.com/vi/yv8eVL4xBI4/mqdefault.jpg",
+            "width": 320,
+            "height": 180
+          },
+          "high": {
+            "url": "https://i.ytimg.com/vi/yv8eVL4xBI4/hqdefault.jpg",
+            "width": 480,
+            "height": 360
+          }
+        },
+        "channelTitle": "Crunchyroll Collection",
+        "liveBroadcastContent": "none",
+        "publishTime": "2023-03-22T14:30:59Z"
       }
     }
   ]
