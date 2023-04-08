@@ -1,16 +1,28 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useState } from "react";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import Image from "next/image";
 
+import { userInfo } from "@/lib/magic-client";
+
 import styles from "./NavBar.module.css";
 
 const NavBar = (props) => {
-  const { username, auth } = props;
+  const { auth } = props;
 
   const router = useRouter();
   const [dropdown, setDropdown] = useState(false);
+  const [username, setUsername] = useState('');
+
+  useEffect(() => {
+    const fetchUserInfo = async () => {
+      const { email, publicAddress } = await  userInfo();
+      setUsername(email);
+    };
+
+    fetchUserInfo();
+  }, [])
 
   const homeHandler = (event) => {
     event.preventDefault();

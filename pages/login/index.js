@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useRef, useState } from "react";
 import { useRouter } from "next/router";
 import Head from "next/head";
@@ -10,11 +10,27 @@ import styles from "@/styles/login.module.css";
 
 const Login = () => {
     const [invalidEmail, setInvalidEmail] = useState(false);
+    const [loginLoading, setLoginLoading] = useState(false);
     const emailInput = useRef(null);
     const router = useRouter();
 
+    useEffect(() => {
+        const handleComplete = () => {
+            setLoginLoading(false);
+        };
+
+        router.events.on('routeChangeComplete', handleComplete);
+        router.events.on('routeChangeError', handleComplete);
+
+        return () => {
+            router.events.off('routeChangeComplete', handleComplete);
+            router.events.off('routeChangeError', handleComplete);
+        }
+    }, [router]);
+
   const emailSubmitHandler = (event) => {
     event.preventDefault();
+    setLoginLoading(true);
 
     const userEmail = emailInput.current.value;
 
@@ -23,9 +39,12 @@ const Login = () => {
         return;
     } 
     setInvalidEmail(false);
-
-    magicLogin(userEmail);
-    // router.push('/');
+    setLoginLoading(false);
+    
+    const didToken = magicLogin(userEmail);
+    if (didToken) {
+        router.push('/');
+    };
   };
 
   return (
@@ -48,7 +67,7 @@ const Login = () => {
             />
             {invalidEmail && (<p className={styles.userMsg}>Please Enter a Valid Email</p>)}
             <button className={styles.loginBtn} onClick={emailSubmitHandler}>
-              Sign In
+              {loginLoading ? 'Loading...' : 'Sign In'}
             </button>
           </div>
         </main>
