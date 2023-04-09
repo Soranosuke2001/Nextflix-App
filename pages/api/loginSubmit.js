@@ -3,10 +3,6 @@ import jwt from "jsonwebtoken";
 import { checkUser, createUser } from "@/lib/db/hasura";
 import { saveToken } from "@/lib/cookies";
 
-// const testing = (jwtPayload) => {
-//     return jwt.sign(jwtPayload, process.env.HASURA_JWT_SECRET_KEY)
-// };
-
 export const Login = async (req, res) => {
   if (req.method === "POST") {
     try {
