@@ -1,7 +1,7 @@
 import { useRouter } from "next/router";
 import Modal from "react-modal";
 
-import styles from '@/styles/Video.module.css';
+import styles from "@/styles/Video.module.css";
 
 Modal.setAppElement("#__next");
 
@@ -19,7 +19,16 @@ const Video = () => {
         onRequestClose={() => router.back()}
         overlayClassName={styles.overlay}
       >
-        <div>Modal Component</div>
+        <div>
+          <iframe
+            id="ytplayer"
+            type="text/html"
+            width="100%"
+            height="450"
+            src={`https://youtube.com/embed/${videoId}?&origin=http://example.com`}
+            frameborder="0"
+          ></iframe>
+        </div>
       </Modal>
     </div>
   );
