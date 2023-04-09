@@ -4,7 +4,7 @@ import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
 import { setURL, dummyFetch } from "@/lib/videos";
-import { mClient } from "@/lib/magic-client";
+import { startFetchMyQuery } from "@/lib/db/hasura";
 
 import styles from "@/styles/Home.module.css";
 
@@ -28,6 +28,7 @@ export default function Home({
   productivityList,
   popularList,
 }) {
+  startFetchMyQuery();
   return (
     <>
       <Head>
