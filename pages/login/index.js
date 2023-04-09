@@ -32,7 +32,6 @@ const Login = () => {
     setErrorMessage("");
     const userInput = event.target.value; 
 
-    console.log(userInput)
     setUserEmail(userInput);
   };
 

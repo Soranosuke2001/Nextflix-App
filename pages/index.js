@@ -42,7 +42,7 @@ export default function Home({
         title="Kamisato Ayaka"
         subTitle="Hoyoverse"
         imageURL="/static/ayaka.jpg"
-        videoId="6jY2f6OkpBo"
+        videoId="1_wHgvZyZdk"
       />
 
       <div className={styles.sectionWrapper}>
