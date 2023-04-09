@@ -15,6 +15,8 @@ const NavBar = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       const { email } = await mClient.user.getMetadata();
+      const didToken = await mClient.user.getIdToken();
+      console.log({ didToken });
 
       if (email) {
         setUsername(email);
