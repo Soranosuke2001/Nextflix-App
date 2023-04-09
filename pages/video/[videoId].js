@@ -3,25 +3,20 @@ import Modal from "react-modal";
 import cls from "classnames";
 
 import styles from "@/styles/Video.module.css";
+import { setURL } from "@/lib/videos";
 
 Modal.setAppElement("#__next");
 
 export const getStaticProps = async () => {
-  // const response = await fetch('');
-  // const data = await response.json();
-
-  const videoInfo = {
-    title: "Genshin Anime Trailer",
-    publishDate: "2023-01-01",
-    description:
-      "Official Genshin Impact Anime trailer!!!! This is a collaboration work with A1 pictures and hope you guys will enjoy it!",
-    channelTitle: "Genshin Impact Official",
-    viewCount: 98374928,
+  const response = await setURL('prerender', '1_wHgvZyZdk');
+  
+  if (response.length > 0) {
+    const videoInfo = response[0];
   };
 
   return {
     props: {
-      videoInfo,
+      videoInfo: response.length > 0 ? response[0] : {},
     },
     revalidate: 10,
   };
@@ -92,7 +87,7 @@ const Video = ({ videoInfo }) => {
               </p>
               <p className={cls(styles.subText, styles.subTextWrapper)}>
                 <span className={styles.textColor}>View Count: </span>
-                <p className={styles.channelTitle}>{viewCount}</p>
+                <span className={styles.channelTitle}>{viewCount}</span>
               </p>
             </div>
           </div>
