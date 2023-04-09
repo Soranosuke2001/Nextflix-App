@@ -31,24 +31,13 @@ export const Login = async (req, res) => {
 
       // returns True if new user
       // returns False if user exits
-      console.log({ jwtToken });
       const checkUserQuery = await checkUser(jwtToken, mMetadata.issuer);
 
-      if (checkUserQuery) {
-        const registerUser = await createUser(jwtToken, mMetadata);
-        const jwtCookie = saveToken(jwtToken, res);
+      checkUserQuery && await createUser(jwtToken, mMetadata);
 
-        console.log(jwtCookie);
+      saveToken(jwtToken, res);
+      res.send({ message: 'api compete' });
 
-
-        res.send({ message: "user is new", registerUser });
-      } else {
-        const jwtCookie = saveToken(jwtToken, res);
-
-        console.log(jwtCookie);
-
-        res.send({ message: "user exists" });
-      }
       //   res.json({ message: checkUserQuery });
     } catch (error) {
       res.status(500).json({ message: "there was an error", error });
