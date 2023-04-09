@@ -9,15 +9,32 @@ import NavBar from "@/components/navbar/NavBar";
 Modal.setAppElement("#__next");
 
 export const getStaticProps = async (context) => {
-  const videoId = context.params.videoId;
-  const response = await setURL('prerender', videoId);
-  
+  // const videoId = context.params.videoId;
+  // const response = await setURL("prerender", videoId);
+
+  // return {
+  //   props: {
+  //     videoInfo: response.length > 0 ? response[0] : {},
+  //   },
+  //   revalidate: 10,
+  // };
+
+  const videoInfo = {
+    title: "Genshin Anime Trailer",
+    publishDate: "2023-01-01",
+    description:
+      "Official Genshin Impact Anime trailer!!!! This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!",
+    channelTitle: "Genshin Impact Official",
+    viewCount: 98374928,
+  };
+
   return {
     props: {
-      videoInfo: response.length > 0 ? response[0] : {},
+      videoInfo,
     },
     revalidate: 10,
   };
+
 };
 
 // This will be the videos that will be prerendered
@@ -26,13 +43,13 @@ export const getStaticPaths = async () => {
     "1_wHgvZyZdk", // Ayaka trailer (2nd)
     "tnIcJ3ekD-0", // JJK trailer
     "eqy85AL70PU", // Solo Leveling trailer
-    "6jY2f6OkpBo"
+    "6jY2f6OkpBo",
   ];
 
   const paths = videoList.map((videoId) => ({
     params: {
-      videoId
-    }
+      videoId,
+    },
   }));
 
   return {
