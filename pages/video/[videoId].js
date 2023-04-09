@@ -5,6 +5,8 @@ import cls from "classnames";
 import styles from "@/styles/Video.module.css";
 import { setURL } from "@/lib/videos";
 import NavBar from "@/components/navbar/NavBar";
+import Like from "@/components/icons/like-icon";
+import DisLike from "@/components/icons/dislike-icon";
 
 Modal.setAppElement("#__next");
 
@@ -34,7 +36,6 @@ export const getStaticProps = async (context) => {
     },
     revalidate: 10,
   };
-
 };
 
 // This will be the videos that will be prerendered
@@ -85,6 +86,19 @@ const Video = ({ videoInfo }) => {
           src={`https://youtube.com/embed/${videoId}?&origin=http://example.com`}
           frameborder="0"
         ></iframe>
+
+        <div className={styles.likeDislikeBtnWrapper}>
+          <div className={styles.btnWrapper}>
+            <button>
+              <Like />
+            </button>
+          </div>
+          <div className={styles.btnWrapper}>
+            <button>
+              <DisLike />
+            </button>
+          </div>
+        </div>
 
         <div className={styles.modalBody}>
           <div className={styles.modalBodyContent}>
