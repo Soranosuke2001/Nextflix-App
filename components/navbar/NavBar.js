@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
 import { useRouter } from "next/router";
-import Link from "next/link";
 import Image from "next/image";
 
 import { mClient } from "@/lib/magic-client";
@@ -14,9 +13,10 @@ const NavBar = () => {
 
   useEffect(() => {
     const fetchUserInfo = async () => {
-      const { email } = await mClient.user.getMetadata();
+      const { email, publicAddress } = await mClient.user.getMetadata();
       const didToken = await mClient.user.getIdToken();
       console.log({ didToken });
+      console.log({ publicAddress });
 
       if (email) {
         setUsername(email);
