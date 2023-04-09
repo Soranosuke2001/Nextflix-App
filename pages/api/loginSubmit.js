@@ -24,7 +24,7 @@ export const Login = async (req, res) => {
 
       const jwtToken = jwt.sign(jwtPayload, process.env.HASURA_JWT_SECRET_KEY);
 
-      const checkUserQuery = await checkUser(jwtToken);
+      const checkUserQuery = await checkUser(jwtToken, mMetadata.issuer);
       res.json({ message: checkUserQuery });
     } catch (error) {
       res.status(500).json({ message: "there was an error", error });
