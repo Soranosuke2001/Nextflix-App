@@ -36,7 +36,7 @@ export const Login = async (req, res) => {
       checkUserQuery && await createUser(jwtToken, mMetadata);
 
       saveToken(jwtToken, res);
-      res.send({ message: 'api compete' });
+      res.send({ message: true });
 
       //   res.json({ message: checkUserQuery });
     } catch (error) {

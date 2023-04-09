@@ -46,7 +46,24 @@ const Login = () => {
 
           if (didToken) {
             setLoginLoading(false);
-            router.push('/');
+
+            const response = await fetch('/api/loginSubmit', {
+              method: 'POST',
+              headers: {
+                'Authorization': `Bearer ${didToken}`,
+                'Content-Type': 'application/json'
+              }
+            });
+
+            const loginSubmission = await response.json();
+
+            if (loginSubmission.message === true) {
+              console.log(loginSubmission);
+              router.push('/');
+            } else {
+              console.log('There was an error signing in');
+              setErrorMessage('Login was not successful')
+            }
           }
         } catch (error) {
           console.log('Error logging the user in: ', error);
