@@ -4,6 +4,7 @@ import cls from "classnames";
 
 import styles from "@/styles/Video.module.css";
 import { setURL } from "@/lib/videos";
+import NavBar from "@/components/navbar/NavBar";
 
 Modal.setAppElement("#__next");
 
@@ -50,6 +51,7 @@ const Video = ({ videoInfo }) => {
 
   return (
     <div className={styles.container}>
+      <NavBar />
       <Modal
         className={styles.modal}
         isOpen={true}
@@ -62,7 +64,7 @@ const Video = ({ videoInfo }) => {
           className={styles.videoPlayer}
           type="text/html"
           width="100%"
-          height="450"
+          height="70%"
           src={`https://youtube.com/embed/${videoId}?&origin=http://example.com`}
           frameborder="0"
         ></iframe>
