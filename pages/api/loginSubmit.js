@@ -8,9 +8,8 @@ export const Login = async (req, res) => {
       const didToken = authHeader ? authHeader.substr(7) : "";
 
       const mMetadata = await mAdmin.users.getMetadataByToken(didToken);
-    //   res.json({ message: mMetadata });
 
-      const jwtToken = jwt.sign({
+      const jwtPayload = {
         ...mMetadata,
         iat: Math.floor(Date.now() / 1000),
         // The token will expire in 7 days
@@ -20,7 +19,9 @@ export const Login = async (req, res) => {
           "x-hasura-default-role": "user",
           "x-hasura-user-id": `${mMetadata.issuer}`,
         },
-      }, "thisisasecretkeythisisasecretkey111120798");
+      };
+
+      const jwtToken = jwt.sign(jwtPayload, process.env.HASURA_JWT_SECRET_KEY);
       res.json({ message: jwtToken });
     } catch (error) {
       res.status(500).json({ message: "there was an error", error });

@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -15,7 +15,7 @@ const NavBar = () => {
     const fetchUserInfo = async () => {
       const { email, publicAddress } = await mClient.user.getMetadata();
       const didToken = await mClient.user.getIdToken();
-      console.log({ didToken });
+      console.log(didToken)
       console.log({ publicAddress });
 
       if (email) {
