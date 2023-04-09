@@ -1,5 +1,6 @@
 import { mAdmin } from "@/lib/magic-server";
 import jwt from "jsonwebtoken";
+import { checkUser } from "@/lib/db/hasura";
 
 export const Login = async (req, res) => {
   if (req.method === "POST") {
@@ -22,7 +23,9 @@ export const Login = async (req, res) => {
       };
 
       const jwtToken = jwt.sign(jwtPayload, process.env.HASURA_JWT_SECRET_KEY);
-      res.json({ message: jwtToken });
+
+      const checkUserQuery = await checkUser(jwtToken);
+      res.json({ message: checkUserQuery });
     } catch (error) {
       res.status(500).json({ message: "there was an error", error });
     }

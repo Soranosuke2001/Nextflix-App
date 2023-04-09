@@ -15,8 +15,6 @@ const NavBar = () => {
     const fetchUserInfo = async () => {
       const { email, publicAddress } = await mClient.user.getMetadata();
       const didToken = await mClient.user.getIdToken();
-      console.log(didToken)
-      console.log({ publicAddress });
 
       if (email) {
         setUsername(email);
