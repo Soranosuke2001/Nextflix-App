@@ -14,11 +14,11 @@ export default function App({ Component, pageProps }) {
     const checkLogin = async () => {
       const loggedIn = await mClient.user.isLoggedIn();
 
-      if (loggedIn) {
-        router.push('/');
-      } else {
-        router.push('/login');
-      }
+      // if (loggedIn) {
+      //   router.push('/');
+      // } else {
+      //   router.push('/login');
+      // }
     };  
 
     checkLogin();
