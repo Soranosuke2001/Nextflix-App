@@ -7,6 +7,7 @@ import { setURL } from "@/lib/videos";
 import NavBar from "@/components/navbar/NavBar";
 import Like from "@/components/icons/like-icon";
 import DisLike from "@/components/icons/dislike-icon";
+import { useState } from "react";
 
 Modal.setAppElement("#__next");
 
@@ -62,10 +63,25 @@ export const getStaticPaths = async () => {
 const Video = ({ videoInfo }) => {
   const router = useRouter();
 
+  const [dislikeState, setDislikeState] = useState(false);
+  const [likeState, setLikeState] = useState(false);
+
   const videoId = router.query.videoId;
 
   const { title, publishDate, description, channelTitle, viewCount } =
     videoInfo;
+
+    const dislikeHandler = () => {
+      console.log('dislike');
+      setDislikeState(true);
+      setLikeState(false);
+    };
+
+    const likeHandler = () => {
+      console.log('like')
+      setLikeState(true);
+      setDislikeState(false);
+    };
 
   return (
     <div className={styles.container}>
@@ -88,14 +104,14 @@ const Video = ({ videoInfo }) => {
         ></iframe>
 
         <div className={styles.likeDislikeBtnWrapper}>
-          <button>
+          <button onClick={likeHandler}>
             <div className={styles.btnWrapper}>
-              <Like />
+              <Like selected={likeState} />
             </div>
           </button>
-          <button>
+          <button onClick={dislikeHandler}>
             <div className={styles.btnWrapper}>
-              <DisLike />
+              <DisLike selected={dislikeState}/>
             </div>
           </button>
         </div>
