@@ -1,6 +1,6 @@
 import { useRouter } from "next/router";
 import Modal from "react-modal";
-import cls from 'classnames';
+import cls from "classnames";
 
 import styles from "@/styles/Video.module.css";
 
@@ -15,7 +15,7 @@ const Video = () => {
     title: "Genshin Anime Trailer",
     publishDate: "2023-01-01",
     description:
-      "Official Genshin Impact Anime trailer!!!! This is a collaboration work with A1 pictures and hope you guys will enjoy it!",
+      "Official Genshin Impact Anime trailer!!!! This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!This is a collaboration work with A1 pictures and hope you guys will enjoy it!",
     channelTitle: "Genshin Impact Official",
     viewCount: 98374928,
   };
@@ -45,19 +45,19 @@ const Video = () => {
         <div className={styles.modalBody}>
           <div className={styles.modalBodyContent}>
             <div className={styles.col1}>
-                <p className={styles.publishDate}>{publishDate}</p>
-                <p className={styles.title}>{title}</p>
-                <p className={styles.description}>{description}</p>
+              <p className={styles.publishDate}>{publishDate}</p>
+              <p className={styles.title}>{title}</p>
+              <p className={styles.description}>{description}</p>
             </div>
             <div className={styles.col2}>
-                <p className={cls(styles.subText, styles.subTextWrapper)}>
-                    <span className={styles.textColor}>Channel Name: </span>
-                    <span className={styles.channelTitle}>{channelTitle}</span>
-                </p>
-                <p className={cls(styles.subText, styles.subTextWrapper)}>
-                    <span className={styles.textColor}>View Count: </span>
-                    <p className={styles.channelTitle}>{viewCount}</p>
-                </p>
+              <p className={cls(styles.subText, styles.subTextWrapper)}>
+                <span className={styles.textColor}>Channel Name: </span>
+                <span className={styles.channelTitle}>{channelTitle}</span>
+              </p>
+              <p className={cls(styles.subText, styles.subTextWrapper)}>
+                <span className={styles.textColor}>View Count: </span>
+                <p className={styles.channelTitle}>{viewCount}</p>
+              </p>
             </div>
           </div>
         </div>
