@@ -8,8 +8,8 @@ const updateState = async (req, res) => {
             if (jwtToken) {
                 const tokenDecoded = jwt.verify(jwtToken, process.env.HASURA_JWT_SECRET_KEY);
 
-                const userId = "did:ethr:0x75219f3520067B262A993A4365a6555CA9388149";
-                const videoId = "1_wHgvZyZdk";
+                const userId = tokenDecoded.issuer;
+                const videoId = req.query.videoId;
 
                 const response = await fetchVideoStats(userId, videoId, jwtToken);
                 console.log(tokenDecoded)
