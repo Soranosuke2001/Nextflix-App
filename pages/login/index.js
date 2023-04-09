@@ -6,7 +6,7 @@ import Link from "next/link";
 
 import { mClient } from "@/lib/magic-client";
 
-import styles from "@/styles/login.module.css";
+import styles from "@/styles/Login.module.css";
 
 const Login = () => {
   const [loginLoading, setLoginLoading] = useState(false);
