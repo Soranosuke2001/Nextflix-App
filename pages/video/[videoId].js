@@ -11,9 +11,9 @@ const Video = () => {
   const videoId = router.query.videoId;
   console.log(videoId);
   return (
-    <div>
-      Video component {videoId}
+    <div className={styles.container}>
       <Modal
+        className={styles.modal}
         isOpen={true}
         contentLabel="Testing Modal Component"
         onRequestClose={() => router.back()}
