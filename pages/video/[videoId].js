@@ -7,13 +7,10 @@ import { setURL } from "@/lib/videos";
 
 Modal.setAppElement("#__next");
 
-export const getStaticProps = async () => {
-  const response = await setURL('prerender', '1_wHgvZyZdk');
+export const getStaticProps = async (context) => {
+  const videoId = context.params.videoId;
+  const response = await setURL('prerender', videoId);
   
-  if (response.length > 0) {
-    const videoInfo = response[0];
-  };
-
   return {
     props: {
       videoInfo: response.length > 0 ? response[0] : {},
@@ -24,9 +21,6 @@ export const getStaticProps = async () => {
 
 // This will be the videos that will be prerendered
 export const getStaticPaths = async () => {
-  // const response = await fetch('');
-  // const data = response.json();
-
   const videoList = [
     "1_wHgvZyZdk", // Ayaka trailer (2nd)
     "tnIcJ3ekD-0", // JJK trailer
