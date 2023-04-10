@@ -71,16 +71,40 @@ const Video = ({ videoInfo }) => {
   const { title, publishDate, description, channelTitle, viewCount } =
     videoInfo;
 
-    const dislikeHandler = () => {
-      console.log('dislike');
-      setDislikeState(true);
-      setLikeState(false);
+    const updateStats = async (favourited) => {
+      const response = await fetch('/api/updateStats', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          videoId,
+          favourited: favourited ? 1 : 0, 
+        })
+      });
+
+      const data = response.json();
+      return data;
     };
 
-    const likeHandler = () => {
+    const dislikeHandler = async () => {
+      console.log('dislike');
+      const favourited = false;
+      setDislikeState(true);
+      setLikeState(false);
+
+      const response = await updateStats(favourited);
+      console.log({ response });
+    };
+
+    const likeHandler = async () => {
       console.log('like')
+      const favourited = true;
       setLikeState(true);
       setDislikeState(false);
+
+      const response = await updateStats(favourited);
+      console.log({ response });
     };
 
   return (
