@@ -11,14 +11,16 @@ const updateState = async (req, res) => {
                 const userId = tokenDecoded.issuer;
                 const videoId = req.query.videoId;
 
-                // returns true if the video is already watched
+                const { watched, favourited } = req.body;
+
+                // returns true if the video exists in the stats table
                 const checkStatsQuery = await fetchVideoStats(userId, videoId, jwtToken);
 
                 if (checkStatsQuery) {
-                    const response = await updateStats({ userId, videoId: "63bUBEIhpNk", watched: true, favourited: 40 }, jwtToken);
+                    const response = await updateStats({ userId, videoId: "63bUBEIhpNk", watched, favourited }, jwtToken);
                     res.json({ message: 'working', response: checkStatsQuery });
                 } else {
-                    const response = await insertStats({ userId, videoId: "63bUBEIhpNk", watched: true, favourited: 2 }, jwtToken)
+                    const response = await insertStats({ userId, videoId: "63bUBEIhpNk", watched, favourited }, jwtToken)
                     res.json({ message: 'working', response: checkStatsQuery });
                 }
             } else {
