@@ -12,11 +12,11 @@ const MyList = () => {
             <Head >
                 <title>My List</title>
             </Head>
-            <main>
+            <main className={styles.main}>
                 <NavBar />
             </main>
-            <div>
-                <SectionCards title="" videos={[]} size="small" />
+            <div className={styles.sectionWrapper}>
+                <SectionCards title="My List" videos={[]} size="small" />
             </div>
         </React.Fragment>
     );
