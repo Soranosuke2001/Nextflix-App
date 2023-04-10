@@ -8,7 +8,7 @@ import { sizeMap, selectScale } from "@/lib/cardHelper";
 import styles from "./Card.module.css";
 
 const Card = (props) => {
-  const { imageURL, size = "medium", cardID="1" } = props;
+  const { imageURL, size = "medium", cardID="1", shouldScale } = props;
 
   const [imageURLSrc, setImageURLSrc] = useState(imageURL);
 
@@ -21,10 +21,14 @@ const Card = (props) => {
     );
   };
 
+  const shouldHover = shouldScale ? {
+    whileHover: { ...scale }
+  } : {whileHover: { scale: 1.03 }};
+
   return (
     <div className={styles.container}>
       <motion.div
-        whileHover={{ ...scale }}
+        {...shouldHover}
         className={cls(styles.imgMotionWrapper, styleName)}
       >
         <Image
