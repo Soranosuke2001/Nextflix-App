@@ -3,8 +3,6 @@ import jwt from 'jsonwebtoken';
 
 const getWatchedVideos = async (req, res) => {
   if (req.method === "GET") {
-    // userid,
-    //
     const jwtToken = req.cookies.token;
     const tokenDecoded = jwt.verify(
       jwtToken,
@@ -14,7 +12,6 @@ const getWatchedVideos = async (req, res) => {
     const userId = tokenDecoded.issuer;
 
     const videosList = await fetchWatchedVideos(userId, jwtToken);
-    console.log(videosList);
     res.json({ message: videosList });
   }
 };

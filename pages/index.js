@@ -14,7 +14,7 @@ export const getServerSideProps = async (context) => {
 
   const userId = "did:ethr:0x75219f3520067B262A993A4365a6555CA9388149"
   const watchedList = await getWatchedTitles(userId, jwtToken);
-  console.log({watchedList})
+  console.log(watchedList)
   // const animeList = await setURL("anime%20trailers");
   // const genshinList = await setURL("genshin%20impact");
   // const popularList = await setURL("popular");
@@ -26,7 +26,7 @@ export const getServerSideProps = async (context) => {
   const popularList = dummyFetch('popular');
 
 
-  return { props: { animeList, genshinList, productivityList, popularList } };
+  return { props: { animeList, genshinList, productivityList, popularList, watchedList } };
 };
 
 export default function Home({
@@ -34,6 +34,7 @@ export default function Home({
   genshinList,
   productivityList,
   popularList,
+  watchedList,
 }) {
   return (
     <React.Fragment>
@@ -78,8 +79,8 @@ export default function Home({
       </div>
       <div className={styles.sectionWrapper}>
         <SectionCards
-          title="Productivity"
-          videos={productivityList}
+          title="Watch it again"
+          videos={watchedList}
           size="small"
         />
       </div>
