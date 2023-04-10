@@ -7,7 +7,7 @@ import { setURL } from "@/lib/videos";
 import NavBar from "@/components/navbar/NavBar";
 import Like from "@/components/icons/like-icon";
 import DisLike from "@/components/icons/dislike-icon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 Modal.setAppElement("#__next");
 
@@ -70,6 +70,23 @@ const Video = ({ videoInfo }) => {
 
   const { title, publishDate, description, channelTitle, viewCount } =
     videoInfo;
+    
+    useEffect(() => {
+      const fetchFavourite = async () => {
+        const response = await fetch(`/api/updateStats?videoId=${videoId}`);
+        const data = await response.json();
+        const {favourited } = data;
+        
+        if (favourited === 1) {
+          setLikeState(true);
+          setDislikeState(false);
+        } else {
+          setDislikeState(true);
+          setLikeState(false);
+        };
+      }
+      fetchFavourite();
+    }, [videoId]);
 
     const updateStats = async (favourited) => {
       const response = await fetch('/api/updateStats', {
@@ -88,7 +105,6 @@ const Video = ({ videoInfo }) => {
     };
 
     const dislikeHandler = async () => {
-      console.log('dislike');
       const favourited = false;
       setDislikeState(true);
       setLikeState(false);
@@ -98,7 +114,6 @@ const Video = ({ videoInfo }) => {
     };
 
     const likeHandler = async () => {
-      console.log('like')
       const favourited = true;
       setLikeState(true);
       setDislikeState(false);
