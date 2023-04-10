@@ -81,8 +81,8 @@ const Video = ({ videoInfo }) => {
           setLikeState(true);
           setDislikeState(false);
         } else {
-          setDislikeState(true);
-          setLikeState(false);
+          setDislikeState(null);
+          setLikeState(null);
         };
       }
       fetchFavourite();
