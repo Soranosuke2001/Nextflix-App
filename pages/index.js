@@ -5,24 +5,12 @@ import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
 import { setURL, dummyFetch, getWatchedTitles } from "@/lib/videos";
-import { verifyToken } from "@/lib/utils";
 
 import styles from "@/styles/Home.module.css";
+import useRedirectUser from "@/util/redirect";
 
 export const getServerSideProps = async (context) => {
-  const jwtToken = context.req.cookies.token;
-  const userId = await verifyToken(jwtToken);
-
-  if (!userId) {
-    return {
-      props: {},
-      redirect: {
-        destination: "/login",
-        permanent: false
-      }
-    };
-  };
-
+  const { userId, jwtToken } = await useRedirectUser(context);
   const watchedList = await getWatchedTitles(userId, jwtToken);
 
   // const animeList = await setURL("anime%20trailers");
