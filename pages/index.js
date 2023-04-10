@@ -5,16 +5,26 @@ import Banner from "@/components/banner/Banner";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
 import { setURL, dummyFetch, getWatchedTitles } from "@/lib/videos";
-import { startFetchMyQuery } from "@/lib/db/hasura";
+import { verifyToken } from "@/lib/utils";
 
 import styles from "@/styles/Home.module.css";
 
 export const getServerSideProps = async (context) => {
-  const jwtToken = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3N1ZXIiOiJkaWQ6ZXRocjoweDc1MjE5ZjM1MjAwNjdCMjYyQTk5M0E0MzY1YTY1NTVDQTkzODgxNDkiLCJwdWJsaWNBZGRyZXNzIjoiMHg3NTIxOWYzNTIwMDY3QjI2MkE5OTNBNDM2NWE2NTU1Q0E5Mzg4MTQ5IiwiZW1haWwiOiJzb3Jhem9yYTEuNEBnbWFpbC5jb20iLCJvYXV0aFByb3ZpZGVyIjpudWxsLCJwaG9uZU51bWJlciI6bnVsbCwid2FsbGV0cyI6W10sImlhdCI6MTY4MTA4NzYyNSwiZXhwIjoxNjgxNjkyNDI1LCJodHRwczovL2hhc3VyYS5pby9qd3QvY2xhaW1zIjp7IngtaGFzdXJhLWFsbG93ZWQtcm9sZXMiOlsiYWRtaW4iLCJ1c2VyIl0sIngtaGFzdXJhLWRlZmF1bHQtcm9sZSI6InVzZXIiLCJ4LWhhc3VyYS11c2VyLWlkIjoiZGlkOmV0aHI6MHg3NTIxOWYzNTIwMDY3QjI2MkE5OTNBNDM2NWE2NTU1Q0E5Mzg4MTQ5In19.QtVnNYt4bq51pham94xszocXQqHJxk6XCsKwNHqmy0Y"
+  const jwtToken = context.req.cookies.token;
+  const userId = await verifyToken(jwtToken);
 
-  const userId = "did:ethr:0x75219f3520067B262A993A4365a6555CA9388149"
+  if (!userId) {
+    return {
+      props: {},
+      redirect: {
+        destination: "/login",
+        permanent: false
+      }
+    };
+  };
+
   const watchedList = await getWatchedTitles(userId, jwtToken);
-  console.log(watchedList)
+
   // const animeList = await setURL("anime%20trailers");
   // const genshinList = await setURL("genshin%20impact");
   // const popularList = await setURL("popular");
