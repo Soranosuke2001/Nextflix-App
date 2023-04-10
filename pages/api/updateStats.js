@@ -1,4 +1,4 @@
-import { fetchVideoStats } from '@/lib/db/hasura';
+import { fetchVideoStats, updateStats } from '@/lib/db/hasura';
 import jwt from 'jsonwebtoken';
 
 const updateState = async (req, res) => {
@@ -11,9 +11,18 @@ const updateState = async (req, res) => {
                 const userId = tokenDecoded.issuer;
                 const videoId = req.query.videoId;
 
-                const response = await fetchVideoStats(userId, videoId, jwtToken);
-                console.log(tokenDecoded)
-                res.json({ message: 'working', response });
+                // returns true if the video is already watched
+                const checkStatsQuery = await fetchVideoStats(userId, videoId, jwtToken);
+
+                if (checkStatsQuery) {
+                    const response = await updateStats({ userId, videoId: "1_wHgvZyZdk", watched: true, favourited: 2 }, jwtToken);
+                    console.log(response);
+                    res.json({ message: 'working', response: checkStatsQuery });
+                } else {
+                    // const response = await updateStats(jwtToken);
+                    console.log('not working')
+
+                }
             } else {
                 res.status(403).json({ message: 'You do not have the correct permissions' });
             }
