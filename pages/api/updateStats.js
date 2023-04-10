@@ -4,7 +4,7 @@ import jwt from "jsonwebtoken";
 const updateState = async (req, res) => {
   if (req.method === "POST") {
     try {
-      const jwtToken = req.cookies.token;
+      const jwtToken = req.cookies.get("token");
       if (jwtToken) {
         const tokenDecoded = jwt.verify(
           jwtToken,
@@ -47,7 +47,7 @@ const updateState = async (req, res) => {
     }
   } else if (req.method === "GET") {
     try {
-      const jwtToken = req.cookies.token;
+      const jwtToken = req.cookies.get("token");
       if (jwtToken) {
         const tokenDecoded = jwt.verify(
           jwtToken,

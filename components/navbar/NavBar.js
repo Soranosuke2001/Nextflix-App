@@ -10,6 +10,7 @@ const NavBar = () => {
   const router = useRouter();
   const [dropdown, setDropdown] = useState(false);
   const [username, setUsername] = useState("");
+  const [JWTToken, setJWTToken] = useState("");
 
   useEffect(() => {
     const fetchUserInfo = async () => {
@@ -49,9 +50,14 @@ const NavBar = () => {
     event.preventDefault();
 
     try {
-      await mClient.user.logout();
-      console.log(await mClient.user.isLoggedIn());
-      router.push("/login");
+      const response = await fetch("/api/logoutSubmit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${JWTToken}`
+        },
+      });
+      await response.json();
     } catch (error) {
       console.log("Error logging the user out: ", error);
       router.push("/login");

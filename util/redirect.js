@@ -1,6 +1,6 @@
 const { verifyToken } = require("@/lib/utils");
 
-const useRedirectUser = async (context) => {
+const UseRedirectUser = async (context) => {
   const jwtToken = context.req ? context.req?.cookies.token : null;
   const userId = await verifyToken(jwtToken);
 
@@ -16,4 +16,4 @@ const useRedirectUser = async (context) => {
   return { userId, jwtToken };
 };
 
-export default useRedirectUser;
+export default UseRedirectUser;

@@ -4,12 +4,12 @@ import Head from "next/head";
 import NavBar from "@/components/navbar/NavBar";
 import SectionCards from "@/components/card/SectionCards";
 import { getMyListVideos } from "@/lib/videos";
-import useRedirectUser from "@/util/redirect";
+import UseRedirectUser from "@/util/redirect";
 
 import styles from "@/styles/MyList.module.css";
 
 export const getServerSideProps = async (context) => {
-  const { userId, jwtToken, redirect = null } = await useRedirectUser(context);
+  const { userId, jwtToken, redirect = null } = await UseRedirectUser(context);
 
   if (redirect) {
     return { redirect };

@@ -109,8 +109,7 @@ const Video = ({ videoInfo }) => {
       setDislikeState(true);
       setLikeState(false);
 
-      const response = await updateStats(favourited);
-      console.log({ response });
+      await updateStats(favourited);
     };
 
     const likeHandler = async () => {
@@ -118,8 +117,7 @@ const Video = ({ videoInfo }) => {
       setLikeState(true);
       setDislikeState(false);
 
-      const response = await updateStats(favourited);
-      console.log({ response });
+      await updateStats(favourited);
     };
 
   return (

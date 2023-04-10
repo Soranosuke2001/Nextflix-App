@@ -58,7 +58,6 @@ const Login = () => {
             const loginSubmission = await response.json();
 
             if (loginSubmission.message === true) {
-              console.log(loginSubmission);
               router.push('/');
             } else {
               console.log('There was an error signing in');
