@@ -10,7 +10,10 @@ import styles from "@/styles/Home.module.css";
 import useRedirectUser from "@/util/redirect";
 
 export const getServerSideProps = async (context) => {
-  const { userId, jwtToken } = await useRedirectUser(context);
+  const { userId, jwtToken, redirect = null } = await useRedirectUser(context);
+  if (redirect) {
+    return { redirect };
+  };
   const watchedList = await getWatchedTitles(userId, jwtToken);
 
   // const animeList = await setURL("anime%20trailers");
