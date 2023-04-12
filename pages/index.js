@@ -7,7 +7,7 @@ import SectionCards from "@/components/card/SectionCards";
 import { setURL, dummyFetch, getWatchedTitles } from "@/lib/videos";
 
 import styles from "@/styles/Home.module.css";
-import UseRedirectUser from "@/util/redirect";
+import { UseRedirectUser } from "@/util/redirect";
 
 export const getServerSideProps = async (context) => {
   const { userId, jwtToken, redirect = null } = await UseRedirectUser(context);
