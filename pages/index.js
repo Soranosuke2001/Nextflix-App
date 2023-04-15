@@ -10,10 +10,18 @@ import styles from "@/styles/Home.module.css";
 import { UseRedirectUser } from "@/util/redirect";
 
 export const getServerSideProps = async (context) => {
-  const { userId, jwtToken, redirect = null } = await UseRedirectUser(context);
-  if (redirect) {
-    return { redirect };
-  };
+  const { userId, jwtToken } = await UseRedirectUser(context);
+
+  if (!userId) {
+    return {
+      props: {},
+      redirect: {
+        destination: "/login",
+        permanent: false,
+      },
+    };
+  }
+
   const watchedList = await getWatchedTitles(userId, jwtToken);
 
   // const animeList = await setURL("anime%20trailers");
@@ -24,10 +32,17 @@ export const getServerSideProps = async (context) => {
   const animeList = dummyFetch();
   const genshinList = dummyFetch();
   const productivityList = dummyFetch();
-  const popularList = dummyFetch('popular');
+  const popularList = dummyFetch("popular");
 
-
-  return { props: { animeList, genshinList, productivityList, popularList, watchedList } };
+  return {
+    props: {
+      animeList,
+      genshinList,
+      productivityList,
+      popularList,
+      watchedList,
+    },
+  };
 };
 
 export default function Home({
